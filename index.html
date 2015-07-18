@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>Sandbox: research, tech, dev by caxenie</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Sandbox: research, tech, dev</h1>
-      <h2 class="project-tagline">Tidy repo for various sci, research, and development chunks, bits, and pieces</h2>
-      <a href="https://github.com/caxenie/neurorobotics.me_backend" class="btn">View on GitHub</a>
-      <a href="https://github.com/caxenie/neurorobotics.me_backend/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/caxenie/neurorobotics.me_backend/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <section class="main-content">
-      <h1>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Sandbox: research, tech, dev by caxenie</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Sandbox: research, tech, dev</h1>
+        <h2>Tidy repo for various sci, research, and development chunks, bits, and pieces</h2>
+        <a href="https://github.com/caxenie/neurorobotics.me_backend" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
 <a id="welcome-to-my-sandbox" class="anchor" href="#welcome-to-my-sandbox" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Welcome to my sandbox.</strong>
 </h1>
 
@@ -56,21 +65,21 @@ In 2011 I have joined the <a href="www.nst.ei.tum.de">Neuroscientific System The
 
 <p>Learning processes which take place during the development of a biological nervous system enable it to extract mappings between external stimuli and its internal state. Precise egomotion estimation is essential to keep these external and internal cues coherent given the rich multisensory environment. In this work we present a learning model which, given various sensory inputs, converges to a state providing a coherent representation of the sensory space and the cross-sensory relations.</p>
 
-<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure1.jpg" alt="Figure 1"></p>
+<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure1.png" alt="Figure 1"></p>
 
 <p>The model is based on Self-Organizing-Maps and Hebbian learning (see Figure 1) using sparse population coded representations of sensory data. The SOM is used to represent the sensory data, while the Hebbian linkage extracts the coactivation pattern given the input modalitites eliciting peaks of activity in the neural populations. The model was able to learn the intrinsic sensory data statistics without any prior knowledge (see Figure 2).</p>
 
-<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure2.jpg" alt="Figure 2"></p>
+<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure2.png" alt="Figure 2"></p>
 
 <p>The developed model, implemented for 3D egomotion estimation on a quadrotor, provides precise estimates for roll, pitch and yaw angles (setup depicted in Figure 3a, b).</p>
 
-<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure3.jpg" alt="Figure 3"></p>
+<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure3.png" alt="Figure 3"></p>
 
 <p>Given relatively complex and multimodal scenarios in which robotic systems operate, with noisy and partially observable environment features, the capability to precisely and timely extract estimates of egomotion critically influences the set of possible actions.</p>
 
 <p>Utilising simple and computationally effective mechanisms, the proposed model is able to learn the intrinsic correlational structure of sensory data and provide more precise estimates of egomotion (see Figure 4a, b).</p>
 
-<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure4.jpg" alt="Figure 4"></p>
+<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure4.png" alt="Figure 4"></p>
 
 <p>Moreover, by learning the sensory data statistics and distribution, the model is able to judiciously allocate resources for efficient representation and computation without any prior assumptions and simplifications. Alleviating the need for tedious design and parametrisation, it provides a flexible and robust approach to multisensory fusion, making it a promising candidate for robotic applications.</p>
 
@@ -96,17 +105,17 @@ In 2011 I have joined the <a href="www.nst.ei.tum.de">Neuroscientific System The
 
 <p>Environmental interaction is a significant aspect in the life of every physical entity, which allows the updating of its internal state and acquiring new behaviors. Such interaction is performed by repeated iterations of a perception-cognition-action cycle, in which the entity acquires and memorizes relevant information from the noisily and partially observable environment, to develop a set of applicable behaviors (see Figure 5). </p>
 
-<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure5.jpg" alt="Figure 5"></p>
+<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure5.png" alt="Figure 5"></p>
 
 <p>This recently started research project is in the area of mobile robotics; and more specifically in explicit methods applicable for acquiring and maintaining such environmental representations. State-of-the-art implementations build upon probabilistic reasoning algorithms, which typically aim at optimal solutions with the cost of high processing requirements.</p>
 
 <p>In this project I am developing an alternative, neurobiologically inspired method for real-time interpretation of sensory stimuli in mobile robotic systems: a distributed networked system with inter-merged information storage and processing that allows efficient parallel reasoning. This networked architecture will be comprised of interconnected heterogeneous software units, each encoding a different feature about the state of the environment that is represented by a local representation (see Figure 6). </p>
 
-<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure6.jpg" alt="Figure 6"></p>
+<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure6.png" alt="Figure 6"></p>
 
 <p>Such extracted pieces of environmental knowledge interact by mutual influence to ensure overall system coherence. A sample instantiation of the developed system focuses on mobile robot heading estimation (see Figure 7). In order to obtain a robust and unambiguous description of robot’s current orientation within its environment inertial, proprioceptive and visual cues are fused (see image). Given available sensory data, the network relaxes to a globally consistent estimate of the robot's heading angle and position.</p>
 
-<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure7.jpg" alt="Figure 7"></p>
+<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure7.png" alt="Figure 7"></p>
 
 <h3>
 <a id="publications-1" class="anchor" href="#publications-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Publications</h3>
@@ -136,17 +145,17 @@ C. Axenie, J. Conradt, Synthesis of Distributed Cognitive Systems: Interacting M
 
 <p>Today’s trends in control engineering and robotics are blending gradually into a slightly challenging area, the development of fault tolerant real-time applications. Hence, applications should timely deliver synchronized data-sets, minimize latency in their response and meet their performance specifications in the presence of disturbances. The fault tolerant behavior in mobile robots refers to the possibility to autonomously detect and identify faults as well as the capability to continue operating after a fault occurred. This work introduces a real-time distributed control application with fault tolerance capabilities for differential wheeled mobile robots (see Figure 8).</p>
 
-<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure8.jpg" alt="Figure 8"></p>
+<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure8.png" alt="Figure 8"></p>
 
 <p>Furthremore, the application was extended to introduce a novel implementation for limited sensor mobile robots environment mapping. The developed algorithm is a SLAM implementation. It uses real time data acquired from the sonar ring and uses this information to feed the mapping module for offline mapping (see Figure 9). </p>
 
-<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure9.jpg" alt="Figure 9"></p>
+<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure9.png" alt="Figure 9"></p>
 
 <p>The latter is running on top of the real time fault tolerant control application for mobile robot trajectory tracking operation (see Figures 10, 11). </p>
 
-<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure10.jpg" alt="Figure 10"></p>
+<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure10.png" alt="Figure 10"></p>
 
-<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure11.jpg" alt="Figure 11"></p>
+<p><img src="https://github.com/caxenie/neurorobotics.me_backend/blob/master/pics/figure11.png" alt="Figure 11"></p>
 
 <p>Along the developed application, the mechanical design, electronics design and implementation were made as part of the BA and MA thesis projects.</p>
 
@@ -173,16 +182,25 @@ C. Axenie, J. Conradt, Synthesis of Distributed Cognitive Systems: Interacting M
 </h2>
 
 <hr>
+        </section>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/caxenie/neurorobotics.me_backend">Sandbox: research, tech, dev</a> is maintained by <a href="https://github.com/caxenie">caxenie</a>.</span>
+        <aside id="sidebar">
+          <a href="https://github.com/caxenie/neurorobotics.me_backend/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/caxenie/neurorobotics.me_backend/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+          <p class="repo-owner"><a href="https://github.com/caxenie/neurorobotics.me_backend"></a> is maintained by <a href="https://github.com/caxenie">caxenie</a>.</p>
 
-    </section>
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
 
   
   </body>
 </html>
-
