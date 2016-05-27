@@ -140,10 +140,39 @@ body:after
 	  		<h3 id="gh-username"></h3>
 	  		<p id="gh-repo-nums"></p>
 	  	</div>
-		<h2>Latest News</h2>
-      		<h3>02/03/07</h3>
-      		<p>Even more websites all about website templates on <a href="http://www.justwebtemplates.com">Just Web Templates</a>.</p>
 	</div>
+	<div class="container" id="activities-container">
+		<div id="loading" style="font-size:2.5em; text-align:center;padding-top:5px;vertical-align:middle;">
+			<i class="icon-spinner icon-spin icon-2x" id="status-icon"></i>
+		</div>
+	</div>
+	<h2>Latest News</h2>
+      	<h3>April 2016</h3>
+      	<p>Awarded 1st prize (team) at the Daimler Financial Services Big Data Analytics Hackaton for the design of a neurofuzzy learning system for anomaly detection and user interaction in big data streams.</p>
+      	<h3>April 2016</h3>
+      	<p>Awarded special Microsoft Cognitive Technologies prize at the Burda Hackdays for the design of a neural learning system for inferring role assignments in working teams using psychometric data analytics.</p>
+      	<h3>April 2016</h3>
+      	<p>Awarded PhD (Summa cum Laude) degree in Neuroscience and Robotics from the Technical University of Munich.</p>
+      	<h3>March 2016</h3>
+      	<p>Awarded 1st prize (team) in the BMW Automotive Hackdays for the design of an inference system for driving profile learning and recommendation for skills improvement and predictive maintenance in car-sharing.</p>
+	<h3>July 2013</h3>
+      	<p>Awarded the Convergent Science Network of Biomimetic and Biohybrid Systems Research Fellowship for the 2013 Telluride Neuromorphic Cognition Engineering Workshop.</p>
+	<h3>May 2013</h3>
+      	<p>Awarded the Convergent Science Network of Biomimetic and Biohybrid Systems Research Fellowship for the 2013 CapoCaccia Cognitive Neuromorphic Engineering Workshop.</p>
+	<h3>April 2013</h3>
+      	<p>Awarded the Leonhard Lorenz-Stiftung Scholarship for novel ideas in research.</p>
+	<h3>April 2012</h3>
+      	<p>Awarded the Bavarian Elite Research Scholarship by the Bavarian State Ministry of Sciences, Research and the Arts.</p>
+	<h3>September 2009</h3>
+      	<p>4th place at the National IBM “Best Linux Application” programming contest for work in robot fault-tolerant control using custom embedded Linux.</p>
+	<h3>May 2009</h3>
+      	<p>Best paper award at the 13th International Scientific Sessions ZTS, UPT (Romania) for work on nonlinear control for mobile robots.</p>
+	<h3>September 2008</h3>
+      	<p>Designer certificate on dependable embedded systems analysis and design from University of Lucern (Switzerland).</p>
+	<h3>June 2008</h3>
+      	<p>Invited talk at International Student Scientific Sessions of the Military Technical Academy (Romania) for work on adaptive systems design.</p>
+	<h3>November 2007</h3>
+      	<p>Invited presentation at the 9th Real-Time Linux Workshop (Austria) for work on real-time control in distributed systems.</p>
 </div>
 <!-- ! /CONTENT -->
 
@@ -186,281 +215,7 @@ var params=function(){var d=[],c;var a=window.location.href.slice(window.locatio
 username = document.getElementById("gh-username");
 reponums = document.getElementById("gh-repo-nums");
 
-function addCommas(a) {
-    return String(a).replace(/(\d)(?=(\d{3})+$)/g, "$1,")
-}
-function jsonp(c, a) {
-    var b = document.createElement("script");
-    b.src = c + "?callback=" + a;
-    head.insertBefore(b, head.firstChild)
-}
-function callback_user(b) {
-    if (b.data.message && b.data.message.substr(0, 3) === "API") {
-        gravatar.innerHTML = '<img src="img/gravatar-user-420.png" id="user_gravatar" />';
-        username.innerHTML = '<a target="_blank" href="https://github.com/' + user + '">' + user + "</a>";
-        $("#gh-repo-nums").remove();
-        $("#status-icon").removeClass("icon-spinner").removeClass("icon-spin").addClass('icon-exclamation-sign');
-        $("#loading").append('<p style="font-size:0.5em;">API rate limit exceeded</p>');
-        console.warn("GitHub Rate Limit Exceeded")
-    } else {
-        gravatar.innerHTML = '<img src="' + b.data.avatar_url + '&s=60" id="user_gravatar"/>';
-        if (!b.data.name) {
-            username.innerHTML = '<a target="_blank" href="https://github.com/' + b.data.login + '">' + b.data.login + "</a>"
-        } else {
-            username.innerHTML = '<a target="_blank" href="https://github.com/' + b.data.login + '">' + b.data.name + "</a>"
-        }
-        reponums.innerHTML = addCommas(b.data.public_repos) + " public repositories";
-        jsonp("https://api.github.com/users/" + user + "/events", "callback_events")
-    }
-    $("#gh-username").fitText(1.1);
-    dtls_height = $("#info-container").outerHeight();
-    body_width = $("body").innerWidth() - 2;
-    activity_space = $(window).innerHeight() - ((dtls_height + 4) + 19);
-    $("#activities-container").css("width", body_width + "px");
-    $("#activities-container").css("height", activity_space + "px");
-    $("#info-container").css("width", body_width + "px");
-    $("#footer").css("width", body_width + "px");
-    var a = $("#gh-user-dtls").height() - 10;
-    $("#user_gravatar").attr({
-        width: a,
-        height: a
-    })
-}
-function callback_repo(b) {
-    if (b.data.message && b.data.message.substr(0, 3) === "API") {
-        gravatar.innerHTML = '<img src="img/gravatar-user-420.png"/>';
-        username.innerHTML = '<a target="_blank" href="https://github.com/' + user + "/" + repo + '">' + user + "/" + repo + "</a>";
-        $("#gh-repo-nums").remove();
-        $("#status-icon").removeClass("icon-spinner").removeClass("icon-spin").addClass('icon-exclamation-sign');
-        $("#loading").append('<p style="font-size:0.5em;">API rate limit exceeded</p>');
-        console.warn("GitHub Rate Limit Exceeded")
-    } else {
-        gravatar.innerHTML = '<img src="' + b.data.owner.avatar_url + '&s=60"/>';
-        username.innerHTML = '<a target="_blank" href="https://github.com/' + b.data.full_name + '">' + b.data.full_name + "</a>";
-        reponums.innerHTML = addCommas(b.data.forks_count) + " forks";
-        jsonp("https://api.github.com/repos/" + user + "/" + repo + "/events", "callback_events")
-    }
-    $("#gh-username").fitText(1.1);
-    dtls_height = $("#info-container").outerHeight();
-    body_width = $("body").innerWidth() - 2;
-    activity_space = $(window).innerHeight() - ((dtls_height + 4) + 19);
-    $("#activities-container").css("width", body_width + "px");
-    $("#activities-container").css("height", activity_space + "px");
-    $("#info-container").css("width", body_width + "px");
-    $("#footer").css("width", body_width + "px");
-    var a = $("#gh-user-dtls").height() - 10;
-    $("#user_gravatar").attr({
-        width: a,
-        height: a
-    })
-}
-function callback_events(b) {
-		$("#loading").remove();
-    var a = b.data;
-    a = a.reverse();
-    $.each(a, function (c) {
-        var e = "icon-github";
-        switch (this.type) {
-            case "CommitCommentEvent":
-                verb = "commented on commit";
-                commit_name = this.repo.name + "@" + this.payload.comment.commit_id.substring(0, 7);
-                commit_link = '<a href="' + this.payload.comment.html_url + '" target="_blank">' + commit_name + "</a>";
-                sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + " " + commit_link;
-                e = "icon-comments-alt";
-                break;
-            case "CreateEvent":
-                verb = "created ";
-                object_type = this.payload.ref_type;
-                if (object_type == "repository") {
-                    repo_name = this.repo.name.split("/");
-                    repo_url = "https://github.com/" + repo_name;
-                    repo_link = '<a href="' + repo_url + '" target="_blank">' + repo_name[1] + "</a>";
-                    sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + object_type + " " + repo_link
-                } else {
-                    repo_name = this.repo.name;
-                    repo_url = "https://github.com/" + repo_name;
-                    repo_link = '<a href="' + repo_url + '" target="_blank">' + repo_name + "</a>";
-                    sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + object_type + " " + this.payload.ref + " at " + repo_link
-                }
-                if (object_type == "tag") {
-                    e = "icon-tag"
-                }
-                if (object_type == "repository") {
-                    e = "icon-book"
-                }
-                if (object_type == "branch") {
-                    e = "icon-plus-sign"
-                }
-                break;
-            case "DeleteEvent":
-                verb = "deleted ";
-                object_type = this.payload.ref_type;
-                object_name = this.payload.ref;
-                repo_name = this.repo.name;
-                repo_url = "https://github.com/" + repo_name;
-                repo_link = '<a href="' + repo_url + '" target="_blank">' + repo_name + "</a>";
-                sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + object_type + " " + object_name + " at " + repo_link;
-                e = "icon-trash";
-                break;
-            case "DownloadEvent":
-                verb = "uploaded ";
-                file_name = this.payload.download.name;
-                repo_name = this.repo.name;
-                repo_url = "https://github.com/" + repo_name;
-                repo_link = '<a href="' + repo_url + '" target="_blank">' + repo_name + "</a>";
-                sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + object_type + " to " + repo_link;
-                e = "icon-paper-clip";
-                break;
-            case "FollowEvent":
-                verb = "started following ";
-                followed_user = this.payload.target.name;
-                user_url = "https://github.com/" + followed_user;
-                user_link = '<a href="' + user_url + '" target="_blank">' + followed_user + "</a>";
-                sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + user_link;
-                break;
-            case "ForkEvent":
-                verb = "forked ";
-                dest_repo_name = this.payload.forkee.full_name;
-                dest_repo_url = "https://github.com/" + dest_repo_name;
-                dest_repo_link = '<a href="' + dest_repo_url + '" target="_blank">' + dest_repo_name + "</a>";
-                sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + dest_repo_link;
-                e = "icon-copy";
-                break;
-            case "ForkApplyEvent":
-                verb = "applied fork commits";
-                repo_name = this.repo.name;
-                repo_url = "https://github.com/" + repo_name;
-                repo_link = '<a href="' + repo_url + '" target="_blank">' + repo_name + "</a>";
-                sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + " to " + repo_link;
-                break;
-            case "GistEvent":
-                verb = this.payload.action + "d ";
-                gist_name = "gist: " + this.payload.gist.id;
-                gist_url = this.payload.html_url;
-                gist_link = '<a href="' + gist_url + '" target="_blank">' + gist_name + "</a>";
-                sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + gist_link;
-                e = "icon-file";
-                break;
-            case "IssueCommentEvent":
-                verb = "commented on issue";
-                issue_name = this.payload.issue.title;
-                issue_link = '<a href="' + this.payload.issue.html_url + '" target="_blank">' + issue_name + "</a>";
-                repo_name = this.repo.name;
-                repo_url = "https://github.com/" + repo_name;
-                repo_link = '<a href="' + repo_url + '" target="_blank">' + repo_name + "</a>";
-                sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + " " + issue_link + " at " + repo_link;
-                e = "icon-comments-alt";
-                break;
-            case "IssuesEvent":
-                verb = this.payload.action + " issue";
-                issue_name = this.payload.issue.title;
-                issue_link = '<a href="' + this.payload.issue.html_url + '" target="_blank">' + issue_name + "</a>";
-                repo_name = this.repo.name;
-                repo_url = "https://github.com/" + repo_name;
-                repo_link = '<a href="' + repo_url + '" target="_blank">' + repo_name + "</a>";
-                sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + " " + issue_link + " at " + repo_link;
-                if (this.payload.action == "closed") {
-                    e = "icon-check"
-                } else {
-                    e = "icon-exclamation-sign"
-                }
-                break;
-            case "MemberEvent":
-                verb = this.payload.action + " ";
-                member_name = this.payload.member.login;
-                repo_name = this.repo.name;
-                repo_url = "https://github.com/" + repo_name;
-                repo_link = '<a href="' + repo_url + '" target="_blank">' + repo_name + "</a>";
-                sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + " " + member_name + " to " + repo_link;
-                break;
-            case "PublicEvent":
-                verb = "open sourced ";
-                repo_name = this.repo.name;
-                repo_url = "https://github.com/" + repo_name;
-                repo_link = '<a href="' + repo_url + '" target="_blank">' + repo_name + "</a>";
-                sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + repo_link;
-                break;
-            case "PullRequestEvent":
-                verb = this.payload.action + " pull request";
-                pull_title = this.payload.pull_request.title;
-                pull_link = '<a href="' + this.payload.pull_request.html_url + '" target="_blank">' + pull_title + "</a>";
-                repo_name = this.repo.name;
-                repo_url = "https://github.com/" + repo_name;
-                repo_link = '<a href="' + repo_url + '" target="_blank">' + repo_name + "</a>";
-                sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + " " + pull_link + " at " + repo_link;
-                e = "icon-share";
-                break;
-            case "PullRequestReviewCommentEvent":
-                console.warn("Event " + this.type + " not shown");
-                console.log(this);
-                break;
-            case "PushEvent":
-                verb = "pushed a commit to ";
-                repo_name = this.repo.name;
-                repo_url = "https://github.com/" + repo_name;
-                repo_link = '<a href="' + repo_url + '" target="_blank">' + repo_name + "</a>";
-                sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + repo_link;
-                e = "icon-upload";
-                break;
-            case "TeamAddEvent":
-                console.warn("Event " + this.type + " not shown");
-                console.log(this);
-                break;
-            case "WatchEvent":
-                verb = "starred ";
-                repo_name = this.repo.name;
-                repo_url = "https://github.com/" + repo_name;
-                repo_link = '<a href="' + repo_url + '" target="_blank"> ' + repo_name + "</a>";
-                sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + repo_link;
-                e = "icon-star";
-                break;
-            default:
-                verb = "did something with ";
-                repo_name = this.repo.name;
-                repo_url = "https://github.com/" + repo_name;
-                repo_link = '<a href="' + repo_url + '" target="_blank"> ' + repo_name + "</a>";
-                sentence = '<a href="https://github.com/' + this.actor.login + '" target="_blank">' + this.actor.login + "</a> " + verb + repo_link;
-                break
-        }
-        if (sentence) {
-            var d = '<div class="row story-row" id="individual-story-' + this.id + '">';
-            d += '<div class="activity-icon">';
-            d += '<i class="' + e + '"></i>';
-            d += "</div>";
-            d += '<div class="activity">';
-            d += "<p>";
-            d += sentence;
-            d += ' <time class="timestamp" title="' + this.created_at + '">' + jQuery.timeago(this.created_at) + "</time>";
-            d += "</p>";
-            d += "</div>";
-            d += "</div>";
-            $(d).hide().prependTo("#activities-container")
-        }
-    });
-    $(".story-row").fadeIn()
-}
-if (type == "repo") {
-    jsonp("https://api.github.com/repos/" + user + "/" + repo, "callback_repo")
-} else {
-    if (type == "user") {
-        jsonp("https://api.github.com/users/" + user, "callback_user")
-    }
-}
-$(window).resize(function () {
-    $("#gh-username").fitText(1.1);
-    dtls_height = $("#info-container").outerHeight();
-    body_width = $("body").innerWidth() - 2;
-    activity_space = $(window).innerHeight() - ((dtls_height + 4) + 19);
-    $("#activities-container").css("width", body_width + "px");
-    $("#activities-container").css("height", activity_space + "px");
-    $("#info-container").css("width", body_width + "px");
-    $("#footer").css("width", body_width + "px");
-    var a = $("#gh-user-dtls").height() - 10;
-    $("#user_gravatar").attr({
-        width: a,
-        height: a
-    })
-});  </script>
+</script>
   
 </body>
 </html>
