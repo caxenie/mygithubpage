@@ -44,7 +44,7 @@
 <p> A short vita and publications list:</p>
 <p>(<a href="https://raw.githubusercontent.com/caxenie/neurorobotics.me_backend/master/CristianAXENIE-CurriculumVitae.pdf">Curriculum Vitae</a>)</p>
 		
-<p>Previously I was a postdoctoral research fellow with the Neuroscientific System Theory Group (<a href="http://www.nst.ei.tum.de">http://www.nst.ei.tum.de</a>) at Technische Universität München (<a href="http://www.tum.de">http://www.tum.de</a>), somewhere in south Germany. </p>
+<p>Previously I was a postdoctoral research fellow with the Neuroscientific System Theory Group (<a href="http://www.nst.ei.tum.de">http://www.nst.ei.tum.de</a>) at Technische Universität München (<a href="http://www.tum.de">http://www.tum.de</a>). </p>
 
 <p><img src="https://raw.githubusercontent.com/caxenie/neurorobotics.me_backend/master/pics/figure_me.png" style="float: left; width: 40%; margin-right: 1%; margin-bottom: 0.5em;" width="50%" height="50%" alt=""> </p>
 	
@@ -52,8 +52,8 @@
 
 <p style="clear: both;">
 	
-<p>After following a robotics and control engineering track during my undergraduate studies, I have switched my focus towards intelligent, brain-inspired processing algorithms.
-In 2011 I have joined the Neuroscientific System Theory Group led by Prof. Conradt. This group's research direction is to understand information processing in neural systems, develop novel algorithms inspired by brain functionality and to transfer these into technical systems.</p>
+<p>After following an AI, robotics and control engineering track during my undergraduate studies, I have switched my focus towards intelligent, brain-inspired processing algorithms.
+In 2011 I have joined the Neuroscientific System Theory Group led by Prof. Conradt. This group's research direction is to understand information processing in neural systems, develop novel AI algorithms inspired by brain functionality and to transfer these into technical systems.</p>
 
 <p> Thesis download link:</p>
 <p>(<a href="https://mediatum.ub.tum.de/download/1284085/1284085.pdf">PDF</a>)</p>
@@ -167,6 +167,9 @@ The characteristics of the streaming data entail a new vision due to the fact th
 Scope
 The current research project aims at exploring object detection algorithms using a novel neuromorphic vision sensor with deep learning neural networks for autonomous electric cars. More precisely, this work will be conducted with the Schanzer Racing Electric (SRE) team at the Technical University of Ingolstadt. SRE is a team of around 80 students, that design, develop and manufacture an all-electric racing car every year to compete in Formula Student Electric. The use of neuromorphic vision sensors together with deep neural networks for object detection is the innovation that the project proposes. The project was supported by nVidia through a GPU Research Grant.
 </p>
+
+<p><img src="https://raw.githubusercontent.com/caxenie/neurorobotics.me_backend/caxenie-patch-1/pics/SRd17.jpg" width="80%" height="80%" alt=""></p>
+	    
 <p>	    
 Context 
 Autonomous driving is a highly discussed topic, but in order to operate autonomously, the car needs to sense its environment. Vision provides the most informative and structured modality capable of grounding perception in autonomous vehicles. In the last decades, classical computer vision algorithms were used to not only locate relevant objects in the scene, but also to classify them. But in recent years, major improvements were reached when first deep learning object detectors were developed.
@@ -178,6 +181,9 @@ Our approach to object detection, recognition and decision making aims at “goi
 
 Similar to photoreceptors in the human retina, a single DVS pixel (receptor) can generate events in response to a change of detected illumination. Events encode dynamic features of the scene, e.g. moving objects, using a spatio-temporal set of events. Since DVS sensors drastically reduce redundant pixels (e.g. static background features) and encode objects in a frame-less fashion with high temporal resolution (about 1 μs), it is well suited for fast motion analyses and tracking. DVS are capable of operating in uncontrolled environments with varying lighting conditions because of their high dynamic range of operation (120 dB).
 </p>
+
+<p><img src="https://raw.githubusercontent.com/caxenie/neurorobotics.me_backend/caxenie-patch-1/pics/Autonomous System.jpg" width="80%" height="80%" alt=""></p>
+
 <p>	    
 As traffic situations yield fast detection and precise estimation, we plan to use such an event-based visual representation together with two convolutional networks proved to be suitable for the task. The two algorithms we plan to explore are the Single Shot Multibox Detector (SSMD), which got popular for its fast computation speed, and the Faster Region-Based Convolutional Neural Network (Faster RCNN), which is known to be a slow but performant detector.
 </p>
@@ -192,11 +198,7 @@ Preliminary results
 The initial step was carried in training a single shot detector (mobilenet) for the cone detection, a stage in the preparation the Formula Electric competition. Experiments were carried on an nVidia GTX1080Ti GPU using TensorRT. The performance evaluation is shown in the following diagrams.	
 </p>
 
-<p><img src="https://raw.githubusercontent.com/caxenie/neurorobotics.me_backend/caxenie-patch-1/pics/SRd17.jpg" width="80%" height="80%" alt=""></p>
-		
 <p><img src="https://raw.githubusercontent.com/caxenie/neurorobotics.me_backend/caxenie-patch-1/pics/setup.png" width="80%" height="80%" alt=""></p>
-
-<p><img src="https://raw.githubusercontent.com/caxenie/neurorobotics.me_backend/caxenie-patch-1/pics/Autonomous System.jpg" width="80%" height="80%" alt=""></p>
 
 <p><img src="https://raw.githubusercontent.com/caxenie/neurorobotics.me_backend/caxenie-patch-1/pics/tensorboard.png" width="80%" height="80%" alt=""></p>
 		
