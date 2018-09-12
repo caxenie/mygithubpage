@@ -97,7 +97,8 @@ PRELIMINARY RESULTS
 
 <p>
 VR MOTION RECONSTRUCTION BASED ON A VR TRACKING SYSTEM AND A SINGLE RGB CAMERA
- 
+</p>
+<p>
 Our preliminary results demonstrate the advantages of our system’s avatar pose reconstruction. This is mainly determined by the use of a powerful learning system, which offers significantly better results than existing heuristic solutions for inverse kinematics. Our system supports the paradigm shift towards learning systems capable to track full-body avatars inside Virtual Reality without the need of expensive external tracking hardware. The following figure shows preliminary results of our proposed reconstruction system.
 </p>
 		
@@ -135,7 +136,8 @@ Moreover, each example coming in a stream can only be processed once, or needs t
 <p><img src="https://raw.githubusercontent.com/caxenie/neurorobotics.me_backend/caxenie-patch-1/pics/online-ml.png" width="80%" height="80%" alt=""></p>
 <p>		
 The need for Online Machine Learning 
-
+</p>
+<p>
 How to compute the entropy of a collection of infinite data, where the domain of the variables can be huge and the number of classes of objects is not known a priori?
 How to maintain the k-most frequent items in a retail data warehouse with 3 TB of data, 100s of GB of new sales records updated daily with 1000000s different items?
 What becomes of statistical computations when the learner can only afford one pass through each data sample because of time and memory constraints; when the learner has to decide on-the-fly what is relevant and process it and what is redundant and could be discarded?
@@ -165,13 +167,17 @@ The characteristics of the streaming data entail a new vision due to the fact th
 
 <p>
 Scope
+</p>
+<p>
 The current research project aims at exploring object detection algorithms using a novel neuromorphic vision sensor with deep learning neural networks for autonomous electric cars. More precisely, this work will be conducted with the Schanzer Racing Electric (SRE) team at the Technical University of Ingolstadt. SRE is a team of around 80 students, that design, develop and manufacture an all-electric racing car every year to compete in Formula Student Electric. The use of neuromorphic vision sensors together with deep neural networks for object detection is the innovation that the project proposes. The project was supported by nVidia through a GPU Research Grant.
 </p>
 
 <p><img src="https://raw.githubusercontent.com/caxenie/neurorobotics.me_backend/caxenie-patch-1/pics/SRd17.jpg" width="80%" height="80%" alt=""></p>
 	    
 <p>	    
-Context 
+Context
+</p>
+<p>
 Autonomous driving is a highly discussed topic, but in order to operate autonomously, the car needs to sense its environment. Vision provides the most informative and structured modality capable of grounding perception in autonomous vehicles. In the last decades, classical computer vision algorithms were used to not only locate relevant objects in the scene, but also to classify them. But in recent years, major improvements were reached when first deep learning object detectors were developed.
 
 In general, such object detectors use a convolutional feature extractor as their basis. Due to the multitude of feature extraction algorithms, there are numerous combinations of feature extractor and object detectors, which influences a system designer’s approach. One of the most interesting niches is the analysis of traffic scenarios. Such scenarios require fast computation of features and classification for decision making.
@@ -189,12 +195,16 @@ As traffic situations yield fast detection and precise estimation, we plan to us
 </p>
 <p>	    
 Motivation
+</p>
+<p>
 The project tries to set a fundamental exploratory work, both in terms of sensory data for environment perception and also neural network architectures for the considered task. The experiments aim at evaluating also the points where better accuracy can only be obtained by sacrificing computation time. The two architecture we chose are opposite. The first one is the SSMD network with Inception V2 as a feature extractor. This network has a low computation time with acceptable accuracy. The correspondent network is the Faster RCNN with ResNet-101 as its feature extractor. Its accuracy is one of the highest, whereas the computation time is relatively slow.
 
 Whereas features are common for frame-based computer vision problems, no solution exists yet to determine unique features in event streams. This is the first step towards more complex algorithms operating on the sparse event-stream. The possibility to create unique filter responses gives rise to the notion of temporal features. This opens the exploratory work we envision in this project, to investigate the use of SSMD and Faster RCNN networks using event-based input in a natively parallel processing pipeline.
 </p>
 <p>
 Preliminary results
+</p>
+<p>
 The initial step was carried in training a single shot detector (mobilenet) for the cone detection, a stage in the preparation the Formula Electric competition. Experiments were carried on an nVidia GTX1080Ti GPU using TensorRT. The performance evaluation is shown in the following diagrams.	
 </p>
 
